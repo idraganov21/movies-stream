@@ -23,7 +23,7 @@ const _layout = () => {
       <Drawer.Screen
         name="favourites"
         options={{
-          title: 'Movies',
+          title: 'Favourites',
           headerShown: false,
           drawerIcon: ({ color, size }) => (
             <Ionicons name="star-outline" size={size} color={color} />
