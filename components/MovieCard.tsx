@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { Card, Text, Image, YStack } from 'tamagui';
+import { Card, Text, Image, YStack, Paragraph } from 'tamagui';
 
 import { ResultItem } from '@/interfaces/apiresults';
 
@@ -15,7 +15,7 @@ const MovieCard = ({ movie }: MovieCardProps) => (
     <Card
       elevate
       width={150}
-      height={260}
+      height={280}
       scale={0.9}
       hoverStyle={{ scale: 0.925 }}
       pressStyle={{ scale: 0.075 }}
@@ -32,6 +32,9 @@ const MovieCard = ({ movie }: MovieCardProps) => (
           <Text fontSize={16} color="lightblue">
             {movie.title || movie.name}
           </Text>
+          <Paragraph padding={5} color="lightblue" theme={'alt2'}>
+            {new Date(movie.release_date! || movie.first_air_date!).getFullYear()}
+          </Paragraph>
         </YStack>
       </Card.Footer>
     </Card>
